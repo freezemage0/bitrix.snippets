@@ -6,6 +6,7 @@ namespace Snippets\Disk;
 
 use Bitrix\Disk\AttachedObject;
 use Bitrix\Main\NotImplementedException;
+use Bitrix\Main\SystemException;
 use CTaskItem;
 use CUser;
 
@@ -30,8 +31,8 @@ class CommentDisabler {
             try {
                 $attachedObject = AttachedObject::getById($attachment);
                 $attachedObject->disableAutoComment();
-            } catch (NotImplementedException $e) {
-                // Bitrix lies to you: this exception cannot be thrown.
+            } catch (SystemException $e) {
+                continue; // Cannot do anything about it. Moving on.
             }
         }
     }
