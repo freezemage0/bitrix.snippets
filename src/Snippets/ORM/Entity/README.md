@@ -1,7 +1,12 @@
 ## Класс `\Bitrix\Main\ORM\Entity`
 
 ### Содержимое
-[TOC]
+- Общая информация
+- Класс `Book`
+- Класс `BookCollection`
+- Класс `BookFactory`
+- Класс `BookRepository`
+- Пример использования.
 
 #### Общая информация
 Bitrix ORM очень тесно завязана на использовании класса `\Bitrix\Main\ORM\Data\DataManager`. Проблема этого класса заключается в том,
