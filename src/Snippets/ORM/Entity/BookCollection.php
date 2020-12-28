@@ -4,9 +4,6 @@
 namespace Snippets\ORM\Entity;
 
 
-use Bitrix\Main\ORM\Objectify\Collection;
-
-
 class BookCollection {
     private $books;
 

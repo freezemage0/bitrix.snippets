@@ -32,7 +32,21 @@ class Book {
         return $this->id;
     }
 
+    public function withId(?int $id): Book {
+        $book = clone $this;
+        $book->id = $id;
+
+        return $book;
+    }
+
     public function getName(): string {
         return $this->name;
+    }
+
+    public function withName(string $name): Book {
+        $book = clone $this;
+        $book->name = $name;
+
+        return $book;
     }
 }

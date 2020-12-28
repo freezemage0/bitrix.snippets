@@ -5,7 +5,6 @@ namespace Snippets\ORM\Entity;
 
 
 use Bitrix\Main\ORM\Data\Result;
-use Bitrix\Main\ORM\Query\Query;
 use InvalidArgumentException;
 use RuntimeException;
 
@@ -48,10 +47,6 @@ class BookRepository {
     }
 
     public function update(Book $book): void {
-        if (empty($book->getId())) {
-            throw new InvalidArgumentException('Invalid entity ID.');
-        }
-
         $object = $this->factory->createEntity()->createObject();
         $object->set('ID', $book->getId());
         $object->set('NAME', $book->getName());
@@ -61,10 +56,6 @@ class BookRepository {
     }
 
     public function delete(Book $book): void {
-        if (empty($book->getId())) {
-            throw new InvalidArgumentException('Invalid entity ID.');
-        }
-
         $object = $this->factory->createEntity()->createObject();
         $object->set('ID', $book->getId());
 
